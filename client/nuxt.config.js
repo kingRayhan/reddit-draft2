@@ -26,12 +26,34 @@ export default {
   buildModules: ["@nuxtjs/tailwindcss"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ["@nuxtjs/axios", "@nuxtjs/auth"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
   tailwindcss: {
     cssPath: "~/assets/styles/app.scss"
+  },
+
+  axios: {
+    baseURL: process.env.NUXT_ENV_APP_API
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: "/api/auth/login", method: "post" },
+          logout: { url: "/api/auth/logout", method: "post" },
+          user: { url: "/api/auth/user", method: "get", propertyName: null }
+        }
+      }
+    },
+    redirect: {
+      login: "/",
+      logout: "/",
+      callback: "/",
+      home: "/"
+    }
   }
 };

@@ -57,4 +57,8 @@ class AuthController extends Controller
             'message' => 'successfully logout'
         ]);
     }
+
+    public function user(){
+        return auth()->user();
+    }
 }

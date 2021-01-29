@@ -1,6 +1,9 @@
 <template>
-  <main>
+  <div>
     <Navbar />
-    <Nuxt />
-  </main>
+    <div class="container mx-auto">
+      <Nuxt />
+    </div>
+    <Footer />
+  </div>
 </template>

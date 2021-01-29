@@ -7,11 +7,8 @@ use Jenssegers\Agent\Agent;
 
 
 Route::group(['prefix' => 'auth'], function (){
+   Route::get('/user', [AuthController::class, 'user']);
    Route::post('/register', [AuthController::class, 'register']);
    Route::post('/login', [AuthController::class, 'login']);
    Route::post('/logout', [AuthController::class, 'logout']);
 });
-
-Route::get('protected', function (){
-    return "protected";
-})->middleware('auth:sanctum');

@@ -16,11 +16,3 @@ button {
   }
 }
 </style>
-
-<script>
-export default {
-  mounted() {
-    this.$nuxt.$loading;
-  }
-};
-</script>
