@@ -12,10 +12,6 @@ export default {
   head: {
     title: "Home"
   },
-  async mounted() {
-    const user = await this.$axios.$get("/api/auth/user");
-    console.log(user);
-  },
   data() {
     return {
       newTask: ""

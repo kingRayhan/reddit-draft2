@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
+use App\Http\Requests\Auth\UpdatePasswordRequest;
+use App\Http\Requests\Auth\UpdateProfileRequest;
 use App\Models\User;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
@@ -56,6 +58,31 @@ class AuthController extends Controller
          return response()->json([
             'message' => 'successfully logout'
         ]);
+    }
+
+    public function updateProfile(UpdateProfileRequest $request)
+    {
+        auth()->user()->update($request->all());
+
+        return response()->json([
+            'message' => 'Profile updated successfully'
+        ]);
+    }
+
+    public function updatePassword(UpdatePasswordRequest $request)
+    {
+        auth()->user()->update([
+            'password' => $request->input('password')
+        ]);
+
+        return response()->json([
+            'message' => 'Password updated successfully'
+        ]);
+    }
+
+    public function destroyAccount()
+    {
+
     }
 
     public function user(){
