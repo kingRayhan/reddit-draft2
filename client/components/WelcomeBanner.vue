@@ -9,6 +9,10 @@
     <Button @click="$router.push('/auth/register')">
       Button Become a Redditor
     </Button>
+
+    <!-- <Button @click="$router.push('/new')">
+      Create post
+    </Button> -->
   </section>
 </template>
 

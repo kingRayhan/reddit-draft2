@@ -4,6 +4,7 @@ namespace App\Http\Requests\Auth;
 
 use App\Rules\AllLowerCase;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class RegisterRequest extends FormRequest
 {
@@ -25,8 +26,8 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => ['required','min:3','max:25', 'alpha_dash', new AllLowerCase(), 'unique:users'],
-            'email' => ['required', 'email', 'unique:users'],
+            'username' => ['required','min:3','max:25', 'alpha_dash', new AllLowerCase(), Rule::unique('users')],
+            'email' => ['required', 'email', Rule::unique('users')],
             'password' => ['required', 'min:6', 'confirmed']
         ];
     }

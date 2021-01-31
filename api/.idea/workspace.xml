@@ -2,22 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0479919-d599-43d7-8a93-111633d62937" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Auth/RegisterRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Auth/RegisterRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Auth/UpdatePasswordRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Auth/UpdateProfileRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/ValidateCurrentPassword.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/artisan" beforeDir="false" afterPath="$PROJECT_DIR$/artisan" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/components/Alert.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/components/Alert.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/components/LayoutComponents/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/components/LayoutComponents/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/components/LayoutComponents/Sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/components/LayoutComponents/Sidebar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/components/LoginWidget.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/components/LoginWidget.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/components/WelcomeBanner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/components/WelcomeBanner.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/middleware/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/middleware/guest.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/middleware/guest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/nuxt.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/pages/auth/register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/pages/auth/register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/pages/auth/settings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/pages/auth/settings.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/pages/new.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/pages/new.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/static/images/share-modal.jpg:Zone.Identifier" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/static/images/snoo-1.png:Zone.Identifier" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/static/images/snoo-cry.jpg:Zone.Identifier" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/store/error.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/store/todos.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -147,7 +167,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.saveactions" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -165,6 +187,10 @@
       <option name="presentableId" value="Default" />
       <updated>1611903612412</updated>
       <workItem from="1611903614058" duration="4375000" />
+      <workItem from="1611939170513" duration="1420000" />
+      <workItem from="1612028763857" duration="1892000" />
+      <workItem from="1612072872523" duration="24000" />
+      <workItem from="1612106140622" duration="8707000" />
     </task>
     <servers />
   </component>
@@ -172,13 +198,21 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611903767284">
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612031156576">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1611903767284" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1611909863113">
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1612031156576" />
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1612072894936">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1611909863113" />
+    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1612072894936" />
+    <state x="461" y="170" key="SettingsEditor" timestamp="1612107770800">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="170" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1612107770800" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1612118950559">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1612118950559" />
   </component>
 </project>

@@ -1,13 +1,12 @@
 <template>
-  <div>
-    <ul v-if="errors">
+  <form @submit.prevent="handleLogin" class="">
+    <ul>
       <li class="text-red-500 " v-for="error in errors" :key="error">
         {{ error.join("") }}
       </li>
     </ul>
 
-    <form
-      @submit.prevent="handleLogin"
+    <div
       class="flex flex-col items-end p-2 mb-3 border border-gray-600 justify-items-end"
     >
       <div class="flex">
@@ -19,7 +18,7 @@
         />
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Email"
           class="w-1/2 px-3 py-1 border border-gray-600 focus:outline-none focus:border-primaryDark"
           v-model="form.password"
         />
@@ -30,8 +29,8 @@
           Login
         </button>
       </div>
-    </form>
-  </div>
+    </div>
+  </form>
 </template>
 
 <script>
@@ -42,15 +41,20 @@ export default {
         email: "",
         password: ""
       },
-      errors: []
+      errors: {}
     };
   },
   methods: {
     handleLogin() {
-      this.$auth.loginWith("local", { data: this.form }).catch(e => {
-        this.$store.commit("error/ERROR", e.response.data.message);
-        this.errors = e.response.data.errors;
-      });
+      this.$auth
+        .loginWith("local", { data: this.form })
+        .then(res =>
+          this.$store.commit("alert/SUCCESS_ALERT", res.data.message)
+        )
+        .catch(e => {
+          this.errors = e.response.data.errors;
+          this.$store.commit("alert/ERROR_ALERT", e.response.data.message);
+        });
     }
   }
 };

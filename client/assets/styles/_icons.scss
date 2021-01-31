@@ -18,6 +18,8 @@
   width: 23px;
   &--icon-post {
     background-position: 0px -549px;
+
+    &--active,
     &:hover {
       background-position: 0px -520px;
     }

@@ -25,16 +25,9 @@ class UpdateProfileRequest extends FormRequest
      */
     public function rules()
     {
-        // Ignore unique validation on update
-        // -> "unique:users,username,{auth()->id()}"
-
         return [
-            'username' => ['required','min:3','max:25', 'alpha_dash', new AllLowerCase(),
-                Rule::unique('users')->ignore(auth()->id(), 'id')
-            ],
-            'email' => ['required', 'email',
-                Rule::unique('users')->ignore(auth()->id(), 'id')
-            ]
+            'username' => ['required','min:3','max:25', 'alpha_dash', new AllLowerCase(), Rule::unique('users')->ignore(auth()->id())],
+            'email' => ['required', 'email', Rule::unique('users')->ignore(auth()->id())],
         ];
     }
 }
