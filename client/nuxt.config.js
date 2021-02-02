@@ -20,6 +20,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    "~/plugins/tabs.client.js",
     "~/plugins/alert.client.js",
     "~/plugins/url.js",
     "~/plugins/visibility-obserb.client.js"

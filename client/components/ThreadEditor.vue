@@ -2,7 +2,7 @@
   <div>
     <h2 class="mb-4 text-2xl">Submit post/link</h2>
 
-    <div class="w-8/12">
+    <div class="w-8/12 ">
       <form @submit.prevent="handleSaveThread">
         <tabs :options="{ useUrlFragment: false }" @changed="tabChanged">
           <div class="input-wrapper">

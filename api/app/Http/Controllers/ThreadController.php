@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Thread\CreateThreadRequest;
+use App\Http\Requests\Thread\CreateLinkThreadRequest;
+use App\Http\Requests\Thread\CreateTextThreadRequest;
 use App\Http\Resources\Thread\ThreadListResource;
 use App\Http\Resources\Thread\ThreadSingleResource;
 use App\Models\Thread;
@@ -11,38 +12,60 @@ use Illuminate\Http\Request;
 class ThreadController extends Controller
 {
     /**
+     * ThreadController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum')->except(['index', 'show']);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
-        return ThreadListResource::collection(Thread::paginate());
+        return ThreadListResource::collection(Thread::latest()->paginate());
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
+     * Store link thread
+     * @param CreateLinkThreadRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(CreateThreadRequest $request)
+    public function storeLinkThread(CreateLinkThreadRequest $request)
     {
-        $thread = auth()->user()->threads()->create($request->all());
+        $thread = auth()->user()->threads()->create(
+            array_merge(
+                $request->all(['title', 'thumbnail', 'link']),
+                ['type' => 'LINK']
+            )
+        );
 
         return response()->json([
             'message' => 'successfully registered',
-            'data' => $thread
+            'data' => new ThreadListResource($thread)
+        ]);
+    }
+
+    /**
+     * Store text thread
+     * @param CreateTextThreadRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function storeTextThread(CreateTextThreadRequest $request)
+    {
+        $thread = auth()->user()->threads()->create(
+            array_merge(
+                $request->all(['title', 'thumbnail', 'body']),
+                ['type' => 'TEXT']
+            )
+        );
+
+        return response()->json([
+            'message' => 'successfully registered',
+            'data' => new ThreadListResource($thread)
         ]);
     }
 

@@ -9,6 +9,8 @@
     >
       {{ thread.body }}
     </div>
+
+    <Comment v-for="comment in comments" :key="comment.id" :comment="comment" />
   </div>
 </template>
 <script>
@@ -20,7 +22,10 @@ export default {
   },
   async asyncData({ params, $axios }) {
     const { data: thread } = await $axios.$get(`/api/threads/${params.slug}`);
-    return { thread };
+    const { data: comments } = await $axios.$get(
+      `/api/comments?thread_id=${thread.id}`
+    );
+    return { thread, comments };
   }
 };
 </script>

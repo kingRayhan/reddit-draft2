@@ -52,7 +52,7 @@ export default {
   head: {
     title: "Register"
   },
-  middleware: "guest",
+  // middleware: "guest",
   data: () => ({
     form: {
       username: "",
