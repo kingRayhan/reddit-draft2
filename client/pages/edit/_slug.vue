@@ -13,7 +13,7 @@
               :isError="errors.title !== undefined"
             />
           </div>
-          <Tab title="Link" :active="true">
+          <Tab title="Link" :active="form.type === 'LINK'">
             <div class="mb-4 input-wrapper">
               <Input
                 label="Url"
@@ -23,7 +23,7 @@
               />
             </div>
           </Tab>
-          <Tab title="Text">
+          <Tab title="Text" :active="form.type === 'TEXT'">
             <div class="input-wrapper">
               <Textarea
                 label="Text (Optional)"

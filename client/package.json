@@ -17,6 +17,7 @@
     "nuxt-dropzone": "^1.0.4",
     "url-parse": "^1.4.7",
     "vue-observe-visibility": "^1.0.0",
+    "vue-simple-tabs": "^1.5.0",
     "vue-tabs-component": "^1.5.0"
   },
   "devDependencies": {

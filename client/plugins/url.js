@@ -1,6 +1,6 @@
 import Url from "url-parse";
 
-export default (context, inject) => {
+export default (_, inject) => {
   inject("parseUrl", fullUrl => {
     const url = new Url(fullUrl);
     return url;
